@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @apply transition-colors duration-300;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+@theme dark{
+  --color-bg-dark: #11224E;
+  --color-text-dark: #11224E;
+  --color-nav-dark: #0A1A33;
+}
+@theme light {
+  --color-bg-light: #F4F4F4;
+  --color-text-light: #ffffff;
+  --color-nav-light: #1D546C;
+}
+
+@theme animations {
+  --animate-wiggle: wiggle var(--animate-duration) ease-in-out infinite;
+  --animate-duration: 500ms;
+  @keyframes wiggle {
+    0%, 100% {
+      transform: rotate(-0.2deg);
+    }
+    50% {
+      transform: rotate(0.2deg);
+      -webkit-transform: rotate(0.2deg);
+      -moz-transform: rotate(0.2deg);
+      -ms-transform: rotate(0.2deg);
+      -o-transform: rotate(0.2deg);
+    }
+  }
+  --animate-joindiscord: pulse 2s ease-in-out infinite;
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+}
+    50% {
+      transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      -o-transform: scale(1.05);
+    }
+  }
+}
